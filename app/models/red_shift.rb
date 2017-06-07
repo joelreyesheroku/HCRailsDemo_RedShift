@@ -1,7 +1,6 @@
 class RedShift < ApplicationRecord
-
- require 'uri'
-
+  self.table_name = "account"
+ exit
   uri = URI.parse(ENV["REDSHIFT"])
 
   def initialize                                                            
