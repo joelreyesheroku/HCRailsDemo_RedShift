@@ -4,11 +4,12 @@ class RedShift < ApplicationRecord
   def initialize
     uri = URI.parse(ENV["REDSHIFT"])
     @conn = PG.connect(
-     port: uri.port,
+    url = uri
+    # port: uri.port,
     # pool: 5,
-     username: uri.user,
-     password: uri.password,
-     host: uri.host
+    # username: uri.user,
+    # password: uri.password,
+    # host: uri.host
     )
   end 
 
