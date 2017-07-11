@@ -1,6 +1,5 @@
 class RedShift < ApplicationRecord
   self.table_name = "account"
- exit
   uri = URI.parse(ENV["REDSHIFT"])
 
   def initialize                                                            
@@ -12,6 +11,8 @@ class RedShift < ApplicationRecord
      host: uri.host                                               
     )                                                                       
   end 
+
+
 
 
 end
