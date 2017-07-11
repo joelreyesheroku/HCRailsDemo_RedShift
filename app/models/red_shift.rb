@@ -1,8 +1,8 @@
 class RedShift < ApplicationRecord
   self.table_name = "account"
-  uri = URI.parse(ENV["REDSHIFT"])
 
-  def initialize                                                            
+  def initialize             
+    uri = URI.parse(ENV["REDSHIFT"])                                               
     @conn = PG.connect(                                                                                                        
      port: uri.port,                                                           
      pool: 5,                                                                                                        
