@@ -25,6 +25,6 @@ development:
   port: 
   schema_search_path: "EXAMPLE"
   
-production:
-   url: <%= ENV['DATABASE_URL'] %>
+#production:
+#   url: <%= ENV['DATABASE_URL'] %>
 
