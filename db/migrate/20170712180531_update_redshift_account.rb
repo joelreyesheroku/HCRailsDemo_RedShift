@@ -26,7 +26,7 @@ class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
         t.integer "billinglatitude"
         t.integer "id"
         t.string "website", limit: 255
-        t.string "billingcity", limit: 40,
+        t.string "billingcity", limit: 40
         t.text "description"
         t.datetime "createddate"
         t.integer "billinglongitude"
