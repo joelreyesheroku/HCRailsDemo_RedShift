@@ -1,0 +1,2 @@
+class MoverController < ApplicationController
+end
