@@ -7,7 +7,6 @@ class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
       )
     end
     
-    drop_table :account
     
     create_table :account do |t|
         t.string   "billingpostalcode", limit: 20
