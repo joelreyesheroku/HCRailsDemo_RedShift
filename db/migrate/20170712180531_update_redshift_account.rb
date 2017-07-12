@@ -1,5 +1,9 @@
 class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
   def change
+    def connection
+      ActiveRecord::Base.establish_connection("RedShift#{Rails.env}").connection
+    end
+    
     drop_table :account
     
     create_table :account do |t|
