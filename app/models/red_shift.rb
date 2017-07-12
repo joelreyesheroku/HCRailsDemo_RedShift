@@ -9,6 +9,7 @@ class RedShift < ApplicationRecord
     username: uri.user,
     password: uri.password,
     host: uri.host
+    database: "kevcoredshift"
     )
 
 
