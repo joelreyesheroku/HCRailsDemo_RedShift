@@ -41,5 +41,6 @@ class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
         t.string "billingpostalcode", limit: 20
         t.string "sfid", limit: 18 
         t.timestamps
-  end
+      end
+    end
 end
