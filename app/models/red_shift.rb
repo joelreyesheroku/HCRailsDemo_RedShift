@@ -2,7 +2,7 @@ class RedShift < ApplicationRecord
   self.table_name = "account"
 
  # def initialize
- establish_connection(ENV["REDSHIFT"])
+   redshift_connection(ENV["REDSHIFT"])
    # uri = URI.parse(ENV["REDSHIFT"])
    # @conn = PG.connect(
    # url = uri

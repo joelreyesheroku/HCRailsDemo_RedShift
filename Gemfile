@@ -6,6 +6,9 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0'
 # Use PG as the database for Active Record
 gem 'pg'
+#we also need RedShift
+gem 'activerecord5-redshift-adapter'
+
 # Use SCSS for stylesheets
 gem 'sass-rails' #, '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
