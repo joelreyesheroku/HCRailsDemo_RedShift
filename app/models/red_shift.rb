@@ -8,7 +8,7 @@ class RedShift < ApplicationRecord
     pool: 5,
     username: uri.user,
     password: uri.password,
-    host: uri.host
+    host: uri.host,
     database: "kevcoredshift"
     )
 
