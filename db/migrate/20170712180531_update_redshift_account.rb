@@ -31,7 +31,7 @@ class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
         t.datetime "createddate"
         t.integer "billinglongitude"
         t.string "fax" , limit:40
-        t.string "phone" limit: 40
+        t.string "phone", limit: 40
         t.string "_hc_lastop", limit: 32
         t.text "_hc_err"
         t.string "billingstate", limit: 80
