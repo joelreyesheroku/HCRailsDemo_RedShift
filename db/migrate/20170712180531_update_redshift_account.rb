@@ -1,13 +1,13 @@
 class UpdateRedshiftAccount < ActiveRecord::Migration[5.0]
-  def change
-    def connection      
-      uri = URI.parse(ENV["REDSHIFT"])
-      @conn = PG.connect(
-      url = uri
-      )
-    end
-    
-    
+
+  def connection      
+    uri = URI.parse(ENV["REDSHIFT"])
+    @conn = PG.connect(
+    url = uri
+    )
+  end
+
+  def change    
     create_table :account do |t|
         t.string   "billingpostalcode", limit: 20
         t.string   "sfid",              limit: 18
