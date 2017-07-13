@@ -10,7 +10,9 @@ gem 'pg'
 gem 'activerecord5-redshift-adapter'
 
 #Let's use bulk imports
-gem 'activerecord-import'
+#gem 'activerecord-import'
+gem 'bulk_insert'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails' #, '~> 4.0.3'
