@@ -7,9 +7,15 @@ class MoverController < ApplicationController
   
   def move_to_rs
     pg_accounts = Account.all
-    for a in pg_accounts
-      RedShift.create!(a.attributes)
-      end
+   # for a in pg_accounts
+   #   RedShift.create!(a.attributes)
+   #   puts "moved account #{a.id}"
+   #   end
+   RedShift.import pg_accounts
+    end
+    
+    def clean_redshift
+      #need to be able to truncate the table here
     end
 
 end

@@ -9,6 +9,9 @@ gem 'pg'
 #we also need RedShift
 gem 'activerecord5-redshift-adapter'
 
+#Let's use bulk imports
+gem 'activerecord-import'
+
 # Use SCSS for stylesheets
 gem 'sass-rails' #, '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
