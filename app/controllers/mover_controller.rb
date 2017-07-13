@@ -11,7 +11,7 @@ class MoverController < ApplicationController
    #   RedShift.create!(a.attributes)
    #   puts "moved account #{a.id}"
    #   end
-   RedShift.import pg_accounts :validate => false :batch_size => 5000
+   # RedShift.import pg_accounts, :validate => false, :batch_size => 5000
   end
     
     def clean_redshift
