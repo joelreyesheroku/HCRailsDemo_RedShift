@@ -5,7 +5,7 @@ class RedShift < ApplicationRecord
   establish_connection(
     adapter: "redshift",
     port: uri.port,
-    pool: 5,
+    pool: 100,
     username: uri.user,
     password: uri.password,
     host: uri.host,
