@@ -19,33 +19,33 @@ class RedShift < ApplicationRecord
     for a in accounts
       temp = ""
       temp << "("
-      temp <<  RedShift.sanitize(a.billingstreet.to_s)
+      temp <<  Self.sanitize(a.billingstreet.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.name.to_s)
+      temp <<  Self.sanitize(a.name.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.lastmodifieddate.to_s)
+      temp <<  Self.sanitize(a.lastmodifieddate.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.id.to_s)
+      temp <<  Self.sanitize(a.id.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.website.to_s)
+      temp <<  Self.sanitize(a.website.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.billingcity.to_s)
+      temp <<  Self.sanitize(a.billingcity.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.createddate.to_s)
+      temp <<  Self.sanitize(a.createddate.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.fax.to_s)
+      temp <<  Self.sanitize(a.fax.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.phone.to_s)
+      temp <<  Self.sanitize(a.phone.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.billingstate.to_s)
+      temp <<  Self.sanitize(a.billingstate.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.accountsource.to_s)
+      temp <<  Self.sanitize(a.accountsource.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.billingcountry.to_s)
+      temp <<  Self.sanitize(a.billingcountry.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.billingpostalcode.to_s)
+      temp <<  Self.sanitize(a.billingpostalcode.to_s)
       temp << ","
-      temp <<  RedShift.sanitize(a.sfid.to_s)
+      temp <<  Self.sanitize(a.sfid.to_s)
       temp << ")"
       string_accounts << temp
     end
@@ -71,7 +71,7 @@ class RedShift < ApplicationRecord
           billingcountry,
           billingpostalcode,
           sfid) VALUES #{s_a}"
-          RedShift.execute_sql(sql_statement)
+          SelfSelf.execute_sql(sql_statement)
         s_a = ""
       else
         s_a << ", "
