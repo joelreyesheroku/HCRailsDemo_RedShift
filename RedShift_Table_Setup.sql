@@ -1,5 +1,5 @@
  create table account (
-	billingstreet varchar(255),
+	 billingstreet varchar(255),
 	 name varchar(255),
 	 lastmodifieddate datetime,
 	 billinglatitude double precision,
