@@ -13,7 +13,7 @@ class RedShift < ApplicationRecord
     )
     
     
-  def bulk_load_accounts(accounts)
+  def self.bulk_load_accounts(accounts)
     puts "starting processing accounts"
     string_accounts = []
     for a in accounts
