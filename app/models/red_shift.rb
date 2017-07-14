@@ -13,39 +13,39 @@ class RedShift < ApplicationRecord
     )
     
     
-  def self.bulk_load_accounts(accounts)
+  def bulk_load_accounts(accounts)
     puts "starting processing accounts"
     string_accounts = []
     for a in accounts
       temp = ""
       temp << "("
-      temp <<  Self.sanitize(a.billingstreet.to_s)
+      temp <<  sanitize(a.billingstreet.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.name.to_s)
+      temp <<  sanitize(a.name.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.lastmodifieddate.to_s)
+      temp <<  sanitize(a.lastmodifieddate.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.id.to_s)
+      temp <<  sanitize(a.id.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.website.to_s)
+      temp <<  sanitize(a.website.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.billingcity.to_s)
+      temp <<  sanitize(a.billingcity.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.createddate.to_s)
+      temp <<  sanitize(a.createddate.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.fax.to_s)
+      temp <<  sanitize(a.fax.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.phone.to_s)
+      temp <<  sanitize(a.phone.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.billingstate.to_s)
+      temp <<  sanitize(a.billingstate.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.accountsource.to_s)
+      temp <<  sanitize(a.accountsource.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.billingcountry.to_s)
+      temp <<  sanitize(a.billingcountry.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.billingpostalcode.to_s)
+      temp <<  sanitize(a.billingpostalcode.to_s)
       temp << ","
-      temp <<  Self.sanitize(a.sfid.to_s)
+      temp <<  sanitize(a.sfid.to_s)
       temp << ")"
       string_accounts << temp
     end
@@ -71,7 +71,7 @@ class RedShift < ApplicationRecord
           billingcountry,
           billingpostalcode,
           sfid) VALUES #{s_a}"
-          SelfSelf.execute_sql(sql_statement)
+          execute_sql(sql_statement)
         s_a = ""
       else
         s_a << ", "
@@ -92,7 +92,7 @@ class RedShift < ApplicationRecord
       billingcountry,
       billingpostalcode,
       sfid) VALUES #{s_a.chomp(", ")}"
-      Self.execute_sql(sql_statement)
+      execute_sql(sql_statement)
       puts "last transactions committed"
     end
 
