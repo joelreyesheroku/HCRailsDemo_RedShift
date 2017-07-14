@@ -12,12 +12,8 @@ class RedShift < ApplicationRecord
     database: "kevcoredshift"
     )
     
-  def execute_sql(*sql_array)     
-    connection.execute(send(:sanitize_sql_array, sql_array))
-  end
     
-    
-  def bulk_load_accounts(accounts)
+  def self.bulk_load_accounts(accounts)
     puts "starting processing accounts"
     string_accounts = []
     for a in accounts
@@ -96,7 +92,7 @@ class RedShift < ApplicationRecord
       billingcountry,
       billingpostalcode,
       sfid) VALUES #{s_a.chomp(", ")}"
-      RedShift.execute_sql(sql_statement)
+      Self.execute_sql(sql_statement)
       puts "last transactions committed"
     end
 
