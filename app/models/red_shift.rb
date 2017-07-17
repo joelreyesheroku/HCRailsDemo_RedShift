@@ -12,6 +12,9 @@ class RedShift < ApplicationRecord
     database: "kevcoredshift"
     )
     
+    def self.clean()
+      RedShift.connection.insert("TRUNCATE TABLE ACCOUNT")
+    end
     
   def self.bulk_load_accounts(accounts)
     puts "starting processing accounts"
@@ -92,7 +95,7 @@ class RedShift < ApplicationRecord
       billingcountry,
       billingpostalcode,
       sfid) VALUES #{s_a.chomp(", ")}"
-      execute_sql(sql_statement)
+      self.connection.execute(sql_statement)
       puts "last transactions committed"
     end
 

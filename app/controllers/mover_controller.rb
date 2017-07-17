@@ -11,7 +11,7 @@ class MoverController < ApplicationController
  end
     
   def clean_redshift
-    RedShift.connection.insert("TRUNCATE TABLE ACCOUNT")
+    RedShift.clean
   end
 
 end
