@@ -71,7 +71,7 @@ class RedShift < ApplicationRecord
           billingcountry,
           billingpostalcode,
           sfid) VALUES #{s_a}"
-          execute_sql(sql_statement)
+          self.execute_sql(sql_statement)
         s_a = ""
       else
         s_a << ", "
