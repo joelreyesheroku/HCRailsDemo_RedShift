@@ -1,0 +1,6 @@
+Account.count
+RedShift.count
+pg_accounts = Account.all
+RedShift.bulk_load_accounts(pg_accounts)
+Account.count
+RedShift.count
