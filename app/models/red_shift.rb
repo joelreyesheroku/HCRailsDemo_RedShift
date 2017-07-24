@@ -59,7 +59,7 @@ class RedShift < ApplicationRecord
       s_a << s.to_s
       i = i + 1
       if i % 5000 == 0
-        sql_statement = "INSERT INTO account (
+        sql_statement = "INSERT INTO accounts_1 (
           billingstreet,
           name,
           lastmodifieddate,
