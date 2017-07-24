@@ -1,5 +1,5 @@
 class RedShift < ApplicationRecord
-  self.table_name = "accounts_1"
+  self.table_name = "account_1"
 
   uri = URI.parse(ENV["REDSHIFT"])
   establish_connection(
@@ -59,7 +59,7 @@ class RedShift < ApplicationRecord
       s_a << s.to_s
       i = i + 1
       if i % 5000 == 0
-        sql_statement = "INSERT INTO accounts_1 (
+        sql_statement = "INSERT INTO account_1 (
           billingstreet,
           name,
           lastmodifieddate,
@@ -81,7 +81,7 @@ class RedShift < ApplicationRecord
         s_a << ", "
       end
     end
-    sql_statement = "INSERT INTO account (
+    sql_statement = "INSERT INTO account_1 (
       billingstreet,
       name,
       lastmodifieddate,
