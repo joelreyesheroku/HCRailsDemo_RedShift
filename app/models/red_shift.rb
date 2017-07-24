@@ -1,5 +1,5 @@
 class RedShift < ApplicationRecord
-  self.table_name = "account"
+  self.table_name = "accounts_1"
 
   uri = URI.parse(ENV["REDSHIFT"])
   establish_connection(
