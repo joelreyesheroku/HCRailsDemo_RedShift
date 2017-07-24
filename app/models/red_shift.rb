@@ -54,7 +54,7 @@ class RedShift < ApplicationRecord
     end
     i = 0
     s_a = ""
-    puts "completeded processing accounts, starting bulk load"
+    puts "Done processing accounts, starting bulk load"
     for s in string_accounts
       s_a << s.to_s
       i = i + 1
@@ -75,6 +75,7 @@ class RedShift < ApplicationRecord
           billingpostalcode,
           sfid) VALUES #{s_a}"
           self.connection.execute(sql_statement)
+          puts i
         s_a = ""
       else
         s_a << ", "
