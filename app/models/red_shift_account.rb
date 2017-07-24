@@ -1,5 +1,5 @@
-class RedShift < ApplicationRecord
-  self.table_name = "account_1"
+class RedShiftAccount < ApplicationRecord
+  self.table_name = "account"
 
   uri = URI.parse(ENV["REDSHIFT"])
   establish_connection(
@@ -13,7 +13,7 @@ class RedShift < ApplicationRecord
     )
     
     def self.clean()
-      RedShift.connection.insert("TRUNCATE TABLE ACCOUNT_1")
+      RedShift.connection.insert("TRUNCATE TABLE ACCOUNT")
     end
     
   def self.bulk_load_accounts(accounts)
@@ -59,7 +59,7 @@ class RedShift < ApplicationRecord
       s_a << s.to_s
       i = i + 1
       if i % 5000 == 0
-        sql_statement = "INSERT INTO account_1 (
+        sql_statement = "INSERT INTO account (
           billingstreet,
           name,
           lastmodifieddate,
@@ -81,7 +81,7 @@ class RedShift < ApplicationRecord
         s_a << ", "
       end
     end
-    sql_statement = "INSERT INTO account_1 (
+    sql_statement = "INSERT INTO account (
       billingstreet,
       name,
       lastmodifieddate,
@@ -99,20 +99,6 @@ class RedShift < ApplicationRecord
       self.connection.execute(sql_statement)
       puts "last transactions committed"
     end
-
-
- # def initialize
-   #RedShift.connection(ENV["REDSHIFT"])
-   # uri = URI.parse(ENV["REDSHIFT"])
-   # @conn = PG.connect(
-   # url = uri
-    # port: uri.port,
-    # pool: 5,
-    # username: uri.user,
-    # password: uri.password,
-    # host: uri.host
-    #)
-#  end 
 
 
 
