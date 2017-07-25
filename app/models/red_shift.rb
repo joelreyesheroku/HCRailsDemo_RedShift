@@ -99,22 +99,4 @@ class RedShift < ApplicationRecord
       self.connection.execute(sql_statement)
       puts "last transactions committed"
     end
-
-
- # def initialize
-   #RedShift.connection(ENV["REDSHIFT"])
-   # uri = URI.parse(ENV["REDSHIFT"])
-   # @conn = PG.connect(
-   # url = uri
-    # port: uri.port,
-    # pool: 5,
-    # username: uri.user,
-    # password: uri.password,
-    # host: uri.host
-    #)
-#  end 
-
-
-
-
 end
